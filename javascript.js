@@ -1,49 +1,41 @@
-function validateForm() {
-    // Ambil elemen form
-    const form = document.getElementById('contactForm');
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    let isValid = true;
 
-    // Ambil nilai field
+    // Clear previous errors
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('messageError').textContent = '';
+
+    // Get form values
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    // Ambil elemen error
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const messageError = document.getElementById('messageError');
-
-    // Reset pesan error
-    nameError.textContent = '';
-    emailError.textContent = '';
-    messageError.textContent = '';
-
-    let isValid = true;
-
-    // Validasi nama
+    // Validate name
     if (name === '') {
-        nameError.textContent = 'Nama harus diisi.';
+        document.getElementById('nameError').textContent = 'Nama harus diisi.';
         isValid = false;
     }
 
-    // Validasi email
+    // Validate email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email === '') {
-        emailError.textContent = 'Email harus diisi.';
+        document.getElementById('emailError').textContent = 'Email harus diisi.';
         isValid = false;
-    } else if (!validateEmail(email)) {
-        emailError.textContent = 'Format email tidak valid.';
+    } else if (!emailPattern.test(email)) {
+        document.getElementById('emailError').textContent = 'Format email tidak valid.';
         isValid = false;
     }
 
-    // Validasi pesan
+    // Validate message
     if (message === '') {
-        messageError.textContent = 'Pesan harus diisi.';
+        document.getElementById('messageError').textContent = 'Pesan harus diisi.';
         isValid = false;
     }
 
-    return isValid;
-}
-
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
+    // Prevent form submission if not valid
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
+</script>

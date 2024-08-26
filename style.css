@@ -1,192 +1,144 @@
-/* Mengatur gaya umum halaman */
+/* Reset beberapa gaya default */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Atur lebar viewport */
+meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1.0";
+}
+
+/* Gaya umum */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* Mengatur gaya header */
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em;
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Mengatur gaya navigasi */
-nav {
-    background-color: #333;
-    color: white;
-    padding: 0.5em;
-}
-
+/* Navigasi */
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
+    padding: 0;
+    list-style: none;
 }
 
 nav ul li {
-    margin: 0 1em;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    padding: 0.5em 1em;
+    font-size: 16px;
 }
 
 nav ul li a:hover {
-    background-color: #575757;
+    text-decoration: underline;
 }
 
-/* Mengatur gaya section utama */
-section {
-    flex: 1;
-    padding: 2em;
-    background-color: #f4f4f4;
-    margin: 0 1em;
-}
-
-/* Mengatur gaya footer */
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    margin-top: auto; /* Memastikan footer berada di bagian bawah */
-}
-
-/* Mengatur gaya umum halaman */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
+/* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
-section {
-    flex: 1;
-    padding: 2em;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-form {
-    background-color: white;
-    padding: 2em;
+/* Layout halaman */
+.about-container, .contact-container {
+    background: #fff;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formulir */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group {
-    margin-bottom: 1em;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 0.75em;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 .form-group textarea {
     resize: vertical;
+    height: 150px;
 }
 
+/* Tombol */
 button {
     background-color: #4CAF50;
     color: white;
-    padding: 0.75em 1.5em;
+    padding: 10px;
     border: none;
     border-radius: 4px;
-    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em;
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .about-content, .contact-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
 }
 
-/* Tambahan untuk pesan error */
-.error-message {
-    color: red;
-    font-size: 0.875em;
-    display: block;
-    margin-top: 0.25em;
-}
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 14px;
+    }
 
-/* Gaya untuk halaman tentang */
-.about {
-    background-color: #f4f4f4;
-    padding: 2em 1em;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-.about-text {
-    text-align: center;
-    max-width: 600px;
-    margin-bottom: 1.5em;
-}
-
-.about-text h2 {
-    color: #333;
-    margin-bottom: 0.5em;
-}
-
-.about-text p {
-    line-height: 1.6;
-    color: #555;
-}
-
-.about-image {
-    display: flex;
-    justify-content: center;
-}
-
-.about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .form-group input, .form-group textarea {
+        font-size: 14px;
+    }
 }

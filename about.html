@@ -5,42 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Kami</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .about-container h1 {
+            text-align: center;
+            color: #333;
+        }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .about-content p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (min-width: 768px) {
+            .about-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .about-content img {
+                width: 45%;
+            }
+            .about-content p {
+                width: 45%;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Tentang Kami</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Tentang</a></li>
-                <li><a href="contact.html">Kontak</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Website Kami</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="about">
-        <div class="container">
-            <div class="about-text">
-                <h2>Selamat Datang di Website Kami</h2>
-                <p>
-                    Kami adalah tim yang berdedikasi untuk menyediakan informasi dan layanan terbaik tentang [topik/proyek]. 
-                    Dengan pengalaman bertahun-tahun di bidang ini, kami berkomitmen untuk membantu Anda mendapatkan informasi yang 
-                    Anda butuhkan dan memberikan layanan yang unggul. 
-                </p>
-                <p>
-                    Misi kami adalah [masukkan misi], dan visi kami adalah [masukkan visi]. Kami percaya bahwa [masukkan keyakinan atau nilai].
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="path/to/your-image.jpg" alt="Tentang Kami">
-            </div>
+    <div class="about-container">
+        <h1>Tentang Kami</h1>
+        <div class="about-content">
+            <img src="your-image.jpg" alt="Deskripsi Gambar">
+            <p>
+                Selamat datang di website kami! Kami adalah tim yang berdedikasi untuk memberikan layanan terbaik di bidang kami. Website ini dirancang untuk memberikan informasi yang jelas dan berguna tentang proyek dan layanan yang kami tawarkan.
+                <br><br>
+                Kami berkomitmen untuk menyediakan konten berkualitas tinggi dan mendukung pengguna kami dengan informasi yang mereka butuhkan. Jika Anda memiliki pertanyaan atau ingin mengetahui lebih lanjut tentang proyek kami, jangan ragu untuk menghubungi kami melalui halaman kontak.
+            </p>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Nama Website. Semua hak dilindungi.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>

@@ -3,38 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struktur Dasar Website</title>
+    <title>Website Sederhana</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Bagian Header -->
     <header>
-        <h1>Judul Website</h1>
-        <p>Deskripsi singkat tentang website ini.</p>
+        <h1>Selamat Datang di Website Saya</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <!-- Bagian Navigasi -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">Tentang</a></li>
-            <li><a href="index.html">Layanan</a></li>
-            <li><a href="contact.html">Kontak</a></li>
-        </ul>
-    </nav>
-
-    <!-- Bagian Section Utama -->
-    <section>
-        <h2>Konten Utama</h2>
-        <p>Di sini Anda dapat menambahkan konten utama website Anda.</p>
-    </section>
-
-    <!-- Bagian Footer -->
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Ini adalah halaman utama.</p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>Ini adalah halaman tentang.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Ini adalah halaman kontak.</p>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2024 Nama Website. Semua hak dilindungi.</p>
+        <p>&copy; 2024 Website Sederhana. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
